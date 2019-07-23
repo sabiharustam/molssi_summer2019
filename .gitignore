@@ -1,3 +1,8 @@
+# Notebook Check point files #
+##############################
+.ipynb_checkpoints/
+.idea/
+
 # Compiled source #
 ###################
 *.com
