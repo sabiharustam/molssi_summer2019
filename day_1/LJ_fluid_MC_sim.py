@@ -3,7 +3,7 @@ import numpy as np
 
 def generate_initial_state(method, box_length=None, n_particles=None, file_name=None):
     """
-    This function generates initial coordinates of a LJ fluid simulation  either randomly or from a file
+    This function generates initial coordinates of a LJ fluid simulation  either randomly or from a file.
 
     Parameters
     ----------
@@ -11,11 +11,15 @@ def generate_initial_state(method, box_length=None, n_particles=None, file_name=
     method : str
         What method to use when generating initial configurations. options are 'random' or 'file'
     box_length : float/int
-        length of simulation box
+        length of simulation box. This is only required if the method is 'random'
     n_particles : int
-        number of particles in the simulation box
+        number of particles in the simulation box. This is only required if the method is 'random'
     file_name : str
-        string of file to load into the simulation box
+        string of file to load into the simulation box. This is only required if the method is 'file'
+
+    Returns
+    -------
+    coordinates in numpy array format.
     """
     
     # 2 methods:
@@ -42,18 +46,18 @@ def LJ_potential(rij2):
     Parameters
     ----------
 
-    rij : float
-        distance rij between two particles
+    rij2 : float
+        square of distance rij between two particles
 
-    Output
-    ------
+    Returns
+    -------
     
     energy : float
         LJ potential energy
     """
     
     energy = 4*(np.power(1/rij2, 6) - np.power(1/rij2, 3))
-    return(energy)
+    return energy
 
 
 def LJ_cutoff_correction(box_length, rij_cutoff, N):
