@@ -120,7 +120,7 @@ def calculate_total_pair_energy(coordinates, box_length, cutoff2):
     return e_total
 
 
-def acceptance_criteron(delta_e, beta):
+def acceptance_criteria(delta_e, beta):
     """
     This function accepts or rejects a proposed move given the energy difference and system temperature
 
