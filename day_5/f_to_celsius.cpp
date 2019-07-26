@@ -1,17 +1,7 @@
 # include <iostream>
+# include <vector>
 # include "temperature.hpp"
 
-
-// Function returns false if f_temp is unpysical.
-bool check_temperature(double f_temp)
-{
-    double k = f_to_kelvin(f_temp);
-    if (k <= 0.0 || k > 1.0e6)
-        return false;
-
-    else
-        return true;
-}
 
 void count(int max)
 {
@@ -25,11 +15,8 @@ void count(int max)
 
 int main(void)
 {
-    count(100);
-	double c = 37.7778;
-	double f = celsius_to_f(c);
-	double k = f_to_kelvin(f);
-	std::cout << "F = " << f << "\nC = " << c << "\nK = " << k << std::endl;
-
+    std::vector<double> my_vector;
+    my_vector.push_back(3.1415);
+    std::cout << "0th element is " << my_vector[0] << std::endl;
 	return 0;
 }
