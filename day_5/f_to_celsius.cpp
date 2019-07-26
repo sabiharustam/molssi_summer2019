@@ -35,6 +35,9 @@ int main(void)
     Eigen::MatrixXd vmult = mat * vec;
     std::cout << "vmult" << std::endl << vmult << std::endl;
 
+    std::cout << "rows = " << mat.rows() << std::endl;
+    std::cout << "cols = " << mat.cols() << std::endl;
+
 	return 0;
 }
 
