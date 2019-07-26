@@ -6,7 +6,9 @@
 int main(void)
 {
     std::vector<double> my_vector;
-    my_vector.push_back(3.1415);
+    for(int i = 0; i < 10; i++)
+        my_vector.push_back(3.1415);
+
     std::cout << "0th element is " << my_vector[0] << std::endl;
     std::cout << "0th element is " << my_vector.at(0) << std::endl;
 
@@ -17,3 +19,4 @@ int main(void)
     std::endl;
 	return 0;
 }
+
