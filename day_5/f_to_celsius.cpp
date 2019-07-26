@@ -40,7 +40,10 @@ bool check_temperature(double f_temp)
 
 void count(int max)
 {
-    for(int i = 0; i < max; i++)   // first is initialization, second is test, third is what
+    for(int i = 0; i < max; i++)
+    // first is initialization, second is test, third is what to execute.
+    // what this function does is it will print i in every step till
+    // i reaches the max.
         std::cout << "i is" << i << std::endl;
     // i++ is equal to i+=1 or ++i is the same.
 }
