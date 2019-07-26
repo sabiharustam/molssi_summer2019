@@ -10,7 +10,6 @@ void print_vector(const std::vector<double> & vec)
     // range-based for loop
     for(auto it : vec)
         std::cout << it << std::endl;
-    vec[0] = 0.000;
 }
 int main(void)
 {
