@@ -31,6 +31,10 @@ int main(void)
     std::cout << mat << std::endl;
     std::cout << mat2 << std::endl;
 
+    // 2X3 * 3X1 = 2X1
+    Eigen::MatrixXd vmult = mat * vec;
+    std::cout << "vmult" << std::endl << vmult << std::endl;
+
 	return 0;
 }
 
