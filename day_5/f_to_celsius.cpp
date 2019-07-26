@@ -23,7 +23,13 @@ int main(void)
     vec(0) = vec(1) = vec(2) = 1.0;
 
     std::cout << "v.v = " << vec.dot(vec) << std::endl;
+
+    // Eigen::MatrixXd mat2 = mat * mat; this won't work cause they are not
+    // square matrix. so you need to transpose one of them.
+    Eigen::MatrixXd mat2 = mat * mat.transpose();
+
     std::cout << mat << std::endl;
+    std::cout << mat2 << std::endl;
 
 	return 0;
 }
