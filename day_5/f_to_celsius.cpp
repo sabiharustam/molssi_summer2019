@@ -31,17 +31,23 @@ double f_to_kelvin(double f_temp)
 bool check_temperature(double f_temp)
 {
     double k = f_to_kelvin(f_temp);
-    if (k <= 0.0)
+    if (k <= 0.0 || k > 1.0e6)
         return false;
-    else if (k > 1.0e6)
-        return false;
+
     else
         return true;
 }
 
+void count(int max)
+{
+    for(int i = 0; i < max; i++)   // first is initialization, second is test, third is what
+        std::cout << "i is" << i << std::endl;
+    // i++ is equal to i+=1 or ++i is the same.
+}
+
 int main(void)
 {
-
+    count(100);
 	double c = 37.7778;
 	double f = celsius_to_f(c);
 	double k = f_to_kelvin(f);
