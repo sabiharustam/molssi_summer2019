@@ -1,5 +1,7 @@
 # include <iostream>
 
+const double zero_k = 273.15;
+
 double f_to_celsius(double f_temp);   // this is function declaration.
 
 
@@ -16,7 +18,7 @@ double celsius_to_f(double c_temp)
 
 double celsius_to_kelvin(double c_temp)
 {
-    return c_temp + 273.15;
+    return c_temp + zero_k;
 }
 
 double f_to_kelvin(double f_temp)
@@ -25,12 +27,25 @@ double f_to_kelvin(double f_temp)
     return celsius_to_kelvin(c_temp);
 }
 
+// Function returns false if f_temp is unpysical.
+bool check_temperature(double f_temp)
+{
+    double k = f_to_kelvin(f_temp);
+    if (k <= 0.0)
+        return false;
+    else if (k > 1.0e6)
+        return false;
+    else
+        return true;
+}
+
 int main(void)
 {
 
 	double c = 37.7778;
 	double f = celsius_to_f(c);
-	std::cout << "F = " << f << "\nC = " << c << std::endl;
+	double k = f_to_kelvin(f);
+	std::cout << "F = " << f << "\nC = " << c << "\nK = " << k << std::endl;
 
 	return 0;
 }
