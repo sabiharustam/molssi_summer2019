@@ -11,3 +11,7 @@ bool check_temperature(double f_temp);
 
 void count(int max);
 
+std::vector<double> f_to_c_vector(std::vector<double> f_vec);
+
+Eigen::MatrixXd f_to_c_matrix(Eigen::MatrixXd f_mat);
+
